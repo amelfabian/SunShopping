@@ -1,0 +1,41 @@
+21-02-2018 18:58 -- classe FenetrePrincipale -- méthode  -- start() -- No suitable driver found for jdbc::sqlserver://localhost:1433;database=ProjetAnalyse;user=fabian;Password=Fa.90120535118;
+28-02-2018 19:37 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 19:39 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 19:39 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 19:42 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 19:47 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 19:49 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 19:56 -- classe ListerCommandeClient -- méthode  -- ListerCommandeClient() -- Le jeu de résultat est fermé.
+28-02-2018 20:17 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- The multi-part identifier "commande.numero_commande" could not be bound.
+28-02-2018 20:17 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- The multi-part identifier "commande.numero_commande" could not be bound.
+28-02-2018 22:44 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+28-02-2018 22:44 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+28-02-2018 23:12 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 20:58 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 20:58 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 20:59 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 22:13 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 22:13 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 22:13 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 23:05 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 23:07 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 23:09 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+07-03-2018 23:12 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- Une erreur s'est produite lors de la conversion de la valeur varchar vers le type de données JDBC INTEGER.
+09-03-2018 15:50 -- classe ListerArticleCommande -- méthode  -- CBChangertCommande() -- L'index 2 est hors limites.
+14-03-2018 17:52 -- classe ListerArticleCommande -- méthode  -- CBChangertCommande() -- L'index 2 est hors limites.
+14-03-2018 17:53 -- classe ListerArticleCommande -- méthode  -- CBChangertCommande() -- L'index 2 est hors limites.
+14-03-2018 17:55 -- classe ListerArticleCommande -- méthode  -- CBChangertCommande() -- L'index 2 est hors limites.
+14-03-2018 18:46 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 18:46 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 19:15 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 19:23 -- classe ModifierIndicLiv -- méthode  -- BModifierIndiceLiv() -- null
+14-03-2018 19:39 -- classe ModifierIndicLiv -- méthode  -- BModifierIndiceLiv() -- Aucune valeur n'est définie pour le paramètre numéro 2.
+14-03-2018 19:43 -- classe ModifierIndicLiv -- méthode  -- BModifierIndiceLiv() -- Aucune valeur n'est définie pour le paramètre numéro 2.
+14-03-2018 20:00 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 20:00 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 20:01 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 20:03 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+14-03-2018 22:24 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+14-03-2018 22:27 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+14-03-2018 22:27 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+14-03-2018 22:31 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- Une erreur s'est produite lors de la conversion de la valeur varchar vers le type de données JDBC INTEGER.

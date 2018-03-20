@@ -1,0 +1,13 @@
+.combo-box .cell:selected {
+	-fx-background-color: white;
+	-fx-text-fill: black;
+}
+
+.combo-box .list-view .list-cell:hover {
+	-fx-text-fill: black;
+	-fx-background-color: lightgrey;
+}
+
+.combo-box .list-view .list-cell {
+	-fx-background-color: white;
+}

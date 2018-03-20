@@ -1,0 +1,26 @@
+.menu:hover {
+	-fx-background-color: lightgrey;
+}
+
+.menu:showing {
+	-fx-background-color: lightgrey;
+}
+
+.menu:label {
+	-fx-text-fill: black;
+}
+
+.menu-item:focused {
+	-fx-background-color: white;
+}
+
+.menu-item:hover{
+	-fx-background-color: lightgrey;
+}
+
+.menu-item:focused.label{
+	-fx-text-fill: black;
+}
+.menu-item .label {
+	-fx-text-fill: black;
+}
