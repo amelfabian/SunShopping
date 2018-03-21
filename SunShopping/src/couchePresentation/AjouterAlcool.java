@@ -62,16 +62,18 @@ public class AjouterAlcool {
 
 		GPSaisies.setHgap(8);
 		GPSaisies.setVgap(8);
-
+		IVImage.setFitWidth(163);
+		IVImage.setFitHeight(163);
 		// empecher l'ecriture dans la zine TFNomImage
 
 		TFNomImage.setDisable(true);
-		TFNomImage.setStyle("-fx-opacity: 1.0");
+		TFNomImage.setStyle("-fx-opacity: 1.0;");
 
 		// paramétrer le bouton BChargerImage
 
 		BChargerImage.setPrefSize(20, 20);
 		BChargerImage.setOnAction(e -> {
+			System.out.println("ouvrir image");
 			OuvrirFichierimg();
 		});
 
@@ -80,16 +82,18 @@ public class AjouterAlcool {
 
 		// Charger l'image par défaut
 
-		IVImage.setImage(new Image("file:images/Alcool/" + TFNomImage.getText()));
+		IVImage.setImage(new Image("file:images/produit/" + TFNomImage.getText()));
 
 		// parametrer les boutons BAjouter et BFermer
 
 		BAjouter.setPrefSize(80, 20);
 		BAjouter.setOnAction(e -> {
+			System.out.println("ajouter alcool");
 			BAjouterAlcool();
 		});
 		BFermer.setPrefSize(80, 20);
 		BFermer.setOnAction(e -> {
+			System.out.println("fermer fenetre");
 			Fenetre.close();
 		});
 
@@ -99,6 +103,8 @@ public class AjouterAlcool {
 
 		// BAjouter et BFermer -> HBBoutons
 		HBBoutons.getChildren().addAll(BAjouter, BFermer);
+		
+		VBZonesFenetre.getChildren().addAll(HBSaisies,SLigne,HBBoutons);
 
 		// HBSaisies,SLigne et HBouton -> VBZonesFenetre
 		VBox.setMargin(HBSaisies, new Insets(15, 15, 10, 15));
@@ -143,7 +149,7 @@ public class AjouterAlcool {
 				new MessageBox(AlertType.INFORMATION, "L'ajout s'est bien déroulé!");
 			// copier le fichier de l'image vers le répertoire des images
 			if (FichierSrc != null) {
-				File FichierDst = new File(System.getProperty("user.dir") + "/images/Alcool" + FichierSrc.getName());
+				File FichierDst = new File(System.getProperty("user.dir") + "/images/produit/" + FichierSrc.getName());
 				Files.copy(FichierSrc.toPath(), FichierDst.toPath());
 			}
 		} catch (ExceptionAccesBD e) {

@@ -120,7 +120,7 @@ public class AlcoolDAO extends gestionnaireDAO<Alcool> {
 		
 		try {
 			
-			PreparedStatement sqlCmd = SqlConn.prepareCall(" select p.numero_produit,a.nomAlcool,a.goutAlcool,a.provenance,p.nom_produit,p.image_produit,p.quantiteEnStock,p.prix_unite from Alcool as a, Produit as p order by a.nomAlcool asc" );
+			PreparedStatement sqlCmd = SqlConn.prepareCall(" select p.numero_produit,a.nomAlcool,a.goutAlcool,a.provenance,p.image_produit,p.nom_produit,p.quantiteEnStock,p.prix_unite from Alcool as a, Produit as p where nom_produit = 'Alcool' order by a.nomAlcool asc" );
 			
 			ResultSet sqlRes = sqlCmd.executeQuery();
 			

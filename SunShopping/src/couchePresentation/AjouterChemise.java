@@ -53,13 +53,17 @@ public class AjouterChemise {
 		GPSaisies.add(TFNomChemise, 1, 1);
 		GPSaisies.add(new Label("Matiere: "), 0, 2);
 		GPSaisies.add(TFMatiere, 1, 2);
-		GPSaisies.add(new Label("Couleur: "), 0, 3);
-		GPSaisies.add(TFCouleur, 1, 3);
+		GPSaisies.add(new Label("Taille: "), 0, 3);
+		GPSaisies.add(TFTaille, 1, 3);
+		GPSaisies.add(new Label("Couleur: "), 0, 4);
+		GPSaisies.add(TFCouleur, 1, 4);
 		GPSaisies.add(new Label("Photo du produit: "), 0, 5);
 		GPSaisies.add(HBImg, 1, 5);
 
+		IVImage.setFitWidth(163);
+		IVImage.setFitHeight(163);
 		// Espacement entre les cellules de GPSaisies
-
+		
 		GPSaisies.setHgap(8);
 		GPSaisies.setVgap(8);
 
@@ -99,6 +103,8 @@ public class AjouterChemise {
 
 		// BAjouter et BFermer -> HBBoutons
 		HBBoutons.getChildren().addAll(BAjouter, BFermer);
+		
+		VBZonesFenetre.getChildren().addAll(HBSaisies,SLigne,HBBoutons);
 
 		// HBSaisies,SLigne et HBouton -> VBZonesFenetre
 		VBox.setMargin(HBSaisies, new Insets(15, 15, 10, 15));

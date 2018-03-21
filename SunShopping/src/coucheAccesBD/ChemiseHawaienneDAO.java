@@ -74,9 +74,7 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 			Character c = obj.getTailleChemise();
 			sqlCmd.setString(5, c.toString());
 
-			sqlCmd.close();
 
-			sqlCmd.setInt(1, obj.getNumProduit());
 
 			return (sqlCmd.executeUpdate() == 0) ? false : true;
 
@@ -94,9 +92,29 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 
 	@Override
 	public boolean Supprimer(int num) throws ExceptionAccesBD {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		try {
+			SqlConn.setAutoCommit(false);
+			PreparedStatement sqlCmd = SqlConn.prepareStatement("delete from Produit where numero_produit = ? ");
+			sqlCmd.executeUpdate();
+			sqlCmd = SqlConn.prepareCall("delete from ChemiseHawaienne where numero_produit = ? ");
+			sqlCmd.setInt(1,num);
+			int iRes = sqlCmd.executeUpdate();
+			SqlConn.commit();
+			SqlConn.setAutoCommit(true);
+			return (iRes == 0)? false : true;
+			
+		}catch(Exception e) {
+			try {
+					SqlConn.rollback();
+					SqlConn.setAutoCommit(true);
+				} catch (Exception e2) {
+				
+				}
+				throw new ExceptionAccesBD(e.getMessage());
+			}
+			
+			}	
+	
 
 	@Override
 	public List<ChemiseHawaienne> ListerTous() throws ExceptionAccesBD {
@@ -104,7 +122,7 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 		
 		try {
 			
-			PreparedStatement sqlCmd = SqlConn.prepareCall("select p.numero_produit, c.nomChemise,c.matiereChemise,c.couleurChemise,c.tailleChemise,p.nom_produit,p.image_produit,p.quantiteEnStock,p.prix_unite from ChemiseHawaienne as c , Produit as p order by nomChemise asc" );
+			PreparedStatement sqlCmd = SqlConn.prepareCall("select p.numero_produit, c.nomChemise,c.matiereChemise,c.couleurChemise,c.tailleChemise,p.image_produit,p.nom_produit,p.quantiteEnStock,p.prix_unite from ChemiseHawaienne as c , Produit as p where nom_produit != 'Alcool' order by nomChemise asc" );
 			
 			ResultSet sqlRes = sqlCmd.executeQuery();
 			

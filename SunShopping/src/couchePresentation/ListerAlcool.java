@@ -43,7 +43,8 @@ public class ListerAlcool {
 			TCProvenance = new TableColumn<>("Provenance");
 			TCProvenance.setMinWidth(95);
 			TVAlcool.getColumns().addAll(TCNumProd,TCNomAlcool,TCGoutAlcool,TCProvenance);
-			
+			IVImage.setFitHeight(180);
+			IVImage.setFitWidth(200);
 			TVAlcool.setPrefSize(50 + 95 + 95 + 120, Hauteur - 60);
 			TVAlcool.setEditable(false);
 			
@@ -68,7 +69,7 @@ public class ListerAlcool {
 			TVAlcool.getSelectionModel().selectedItemProperty().addListener((obs,ancAlc,nouvAlc) -> {
 				if(nouvAlc != null) {
 					System.out.println("ListerAlcool.ListerAlcool().image");
-					IVImage.setImage(new Image("file:E:/Workspace2018/SunShopping/images/produit/" + nouvAlc.getImageProduit()));
+					IVImage.setImage(new Image("file:images/produit/" + nouvAlc.getImageProduit()));
 				}
 			});
 			

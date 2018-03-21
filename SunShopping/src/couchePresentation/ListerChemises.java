@@ -48,7 +48,8 @@ public class ListerChemises {
 				TCTailleChemise = new TableColumn<>("Taille");
 				TCTailleChemise.setMinWidth(50);
 				TVChemise.getColumns().addAll(TCNumProd,TCNomChemise,TCMatierChemise,TCCouleurChemise,TCTailleChemise);
-				
+				IVImage.setFitHeight(180);
+				IVImage.setFitWidth(200);
 				TVChemise.setPrefSize(50 + 95 + 95 + 95 + 75, Hauteur - 60);
 				TVChemise.setEditable(false);
 				
@@ -72,7 +73,7 @@ public class ListerChemises {
 				
 				TVChemise.getSelectionModel().selectedItemProperty().addListener((obs,ancChe,nouvChe) -> {
 					if(nouvChe != null) {
-						IVImage.setImage(new Image("file: images/produit/" + nouvChe.getImageProduit()));
+						IVImage.setImage(new Image("file:images/produit/" + nouvChe.getImageProduit()));
 					}
 				});
 				

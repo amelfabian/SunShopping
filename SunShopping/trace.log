@@ -39,3 +39,8 @@
 14-03-2018 22:27 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
 14-03-2018 22:27 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
 14-03-2018 22:31 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- Une erreur s'est produite lors de la conversion de la valeur varchar vers le type de données JDBC INTEGER.
+21-03-2018 18:16 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+21-03-2018 19:22 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- String index out of range: 0
+21-03-2018 19:23 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- String index out of range: 0
+21-03-2018 19:27 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- L'instruction est fermée.
+21-03-2018 19:32 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- L'instruction est fermée.
