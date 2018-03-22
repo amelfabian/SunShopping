@@ -30,6 +30,8 @@ public class FenetrePrincipale extends Application{
 	private MenuItem MIListerChemise = new MenuItem("Lister Chemise Hawaienne");
 	private MenuItem MIAjouterAlcool = new MenuItem("Ajouter Alcool");
 	private MenuItem MIAjouterChemise = new MenuItem("Ajouter Chemise Hawaienne");
+	private MenuItem MISupprimerAlcool = new MenuItem("Supprimer Alcool");
+	private MenuItem MISupprimerChemise = new MenuItem("Supprimer Chemise");
 	private MenuItem MIModifierIndicLiv = new MenuItem("Modifier indice livraison");
 	private Menu MenuClient = new Menu("Client");
 	private MenuItem MICommandeClient = new MenuItem("Lister Commande client");
@@ -44,7 +46,7 @@ public class FenetrePrincipale extends Application{
 		Instance = fenetre ;
 		// creer la barre des menus 
 		MenuCommande.getItems().addAll(MICommandeLister,MIArticleCommande,MIModifierIndicLiv);
-		MenuProduit.getItems().addAll(MIListerAlcool,MIAjouterAlcool,MIListerChemise,MIAjouterChemise);
+		MenuProduit.getItems().addAll(MIListerAlcool,MIAjouterAlcool, MISupprimerAlcool,MIListerChemise,MIAjouterChemise, MISupprimerChemise);
 		MenuClient.getItems().add(MICommandeClient);
 		MenuSortie.getItems().add(MISortieSortie);
 		BarreMenus.getMenus().addAll(MenuCommande,MenuProduit,MenuClient,MenuSortie);
@@ -57,6 +59,8 @@ public class FenetrePrincipale extends Application{
 		MIAjouterChemise.setOnAction(e -> {new AjouterChemise(); });
 		MIListerAlcool.setOnAction(e -> {new ListerAlcool();});
 		MIListerChemise.setOnAction(e -> { new ListerChemises();});
+		MISupprimerAlcool.setOnAction(e -> {new SupprimerAlcool();});
+		MISupprimerChemise.setOnAction(e -> {new SupprimerChemise();});
 		MIModifierIndicLiv.setOnAction(e -> {new ModifierIndicLiv(); });
 		MICommandeClient.setOnAction(e -> {new ListerCommandeClient(); });
 		MISortieSortie.setOnAction(e -> { System.exit(0) ;});

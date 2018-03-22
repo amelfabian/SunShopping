@@ -1,6 +1,6 @@
 package couchePresentation;
 
-import beans.Alcool;
+import beans.ChemiseHawaienne;
 import coucheAccesBD.ExceptionAccesBD;
 import coucheAccesBD.FabriqueDAO;
 import javafx.collections.FXCollections;
@@ -16,56 +16,53 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class SupprimerAlcool {
-	
-	private final int Largeur = 320;
+public class SupprimerChemise {
+	private final int Largeur = 360;
 	private final int Hauteur = 95;
 	private Stage Fenetre = new Stage();
 	private Scene SceneObj;
 	private HBox HBSelect = new HBox(15);
 	private HBox HBBoutons = new HBox(15);
 	private VBox VBZonesFenetre = new VBox(25);
-	private ComboBox<Alcool> CBAlcool = new ComboBox<>();
+	private ComboBox<ChemiseHawaienne> CBChemise = new ComboBox<>();
 	private Button BSupprimer = new Button("Supprimer");
 	private Button BFermer = new Button("Fermer");
-	
-	public SupprimerAlcool() {
+
+	public SupprimerChemise() {
 		try {
-			CBAlcool.setItems(FXCollections.observableArrayList(FabriqueDAO.getInstance().getInstAlcool().ListerTous()));
-		}catch(ExceptionAccesBD e) {
-			GererErreur.GererErreurSQL("SupprimerAlcool", "SupprimerAlcool()", e.getMessage());
-		new MessageBox(AlertType.ERROR, "Probleme de base de donnée lors du listage des alcools");
-		return;
-		}
-		
-		if(CBAlcool.getItems().size() == 0) {
-			new MessageBox(AlertType.INFORMATION, "Il n'y a aucun alcool dans la base de données!");
+			CBChemise.setItems(FXCollections.observableArrayList(FabriqueDAO.getInstance().getInstChemiseHawaienneDAO().ListerTous()));
+			
+		} catch(ExceptionAccesBD e) {
+			GererErreur.GererErreurSQL("SupprimerChemise", "SupprimerChemise()", e.getMessage());
+			new MessageBox(AlertType.ERROR, "Probleme de base de donnée lors du listage des chemises");
 			return;
 		}
 		
-		CBAlcool.setVisibleRowCount(5);
-		CBAlcool.getSelectionModel().selectFirst();
+		if(CBChemise.getItems().size() ==  0) {
+			new MessageBox(AlertType.INFORMATION, "Il n'y a aucune chemise dans la base de données!");
+			return;
+		}
+		
+		CBChemise.setVisibleRowCount(5);
+		CBChemise.getSelectionModel().selectFirst();
 		
 		BSupprimer.setPrefSize(80, 20);
-		BSupprimer.setOnAction(e -> {BSupprimerAlcool();});
+		BSupprimer.setOnAction(e -> {BSupprimerChemise();});
 		BFermer.setPrefSize(80, 20);
-		BFermer.setOnAction(e -> { Fenetre.close(); });
+		BFermer.setOnAction(e -> { Fenetre.close();});
 		
-		HBSelect.getChildren().addAll(new Label("Choisissez l'alcool: "), CBAlcool);
+		HBSelect.getChildren().addAll(new Label("Choisissez la chemise: "), CBChemise);
 		HBSelect.setAlignment(Pos.CENTER);
-		
 		HBBoutons.getChildren().addAll(BSupprimer,BFermer);
 		HBBoutons.setAlignment(Pos.CENTER);
-		
 		VBZonesFenetre.getChildren().addAll(HBSelect, HBBoutons);
 		VBZonesFenetre.setPadding(new Insets(15));
-		
 		SceneObj = new Scene(VBZonesFenetre, Largeur, Hauteur);
 		Fenetre.setScene(SceneObj);
 		
 		SceneObj.getStylesheets().add("couchePresentation/styleComboBox.css");
 		
-		Fenetre.setTitle("Supprimer un alcool");
+		Fenetre.setTitle("Supprimer une chemise");
 		Fenetre.setResizable(false);
 		Fenetre.setX(FenetrePrincipale.getInstance().getX() +
 		(FenetrePrincipale.getInstance().getWidth() - Largeur) / 2);
@@ -75,22 +72,19 @@ public class SupprimerAlcool {
 		Fenetre.initModality(Modality.APPLICATION_MODAL);
 		Fenetre.showAndWait();
 		
-		
 	}
-
-	private void BSupprimerAlcool() {
+		
+	private void BSupprimerChemise() {
 		try {
-			if(FabriqueDAO.getInstance().getInstAlcool().Supprimer(CBAlcool.getSelectionModel().getSelectedItem().getNumProduit()) == false)
+			if(FabriqueDAO.getInstance().getInstChemiseHawaienneDAO().Supprimer(CBChemise.getSelectionModel().getSelectedItem().getNumProduit()) == false)
 				new MessageBox(AlertType.INFORMATION, "LA suppression n'a pas eu lieu!");
 			else
 				new MessageBox(AlertType.INFORMATION, "La suppresionn s'est bien déroulée");
 		} catch (ExceptionAccesBD e) {
-			GererErreur.GererErreurSQL("SupprimerAlcool", "BSupprimerAlcool()", e.getMessage());
+			GererErreur.GererErreurSQL("SupprimerChemise", "BSupprimerChemise()", e.getMessage());
 			new MessageBox(AlertType.ERROR,
-			"Problème de base de données lors de la suppression de L'alcool!");
+			"Problème de base de données lors de la suppression de La chemise!");
 		}
 		
 	}
-	
-	
 }

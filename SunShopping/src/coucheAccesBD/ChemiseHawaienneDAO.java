@@ -95,6 +95,7 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 		try {
 			SqlConn.setAutoCommit(false);
 			PreparedStatement sqlCmd = SqlConn.prepareStatement("delete from Produit where numero_produit = ? ");
+			sqlCmd.setInt(1, num);
 			sqlCmd.executeUpdate();
 			sqlCmd = SqlConn.prepareCall("delete from ChemiseHawaienne where numero_produit = ? ");
 			sqlCmd.setInt(1,num);

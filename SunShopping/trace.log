@@ -44,3 +44,8 @@
 21-03-2018 19:23 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- String index out of range: 0
 21-03-2018 19:27 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- L'instruction est fermée.
 21-03-2018 19:32 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- L'instruction est fermée.
+22-03-2018 12:46 -- classe SupprimerChemise -- méthode  -- BSupprimerChemise() -- Aucune valeur n'est définie pour le paramètre numéro 1.
+22-03-2018 12:49 -- classe SupprimerChemise -- méthode  -- BSupprimerChemise() -- The DELETE statement conflicted with the REFERENCE constraint "FK__ListeProd__numer__182C9B23". The conflict occurred in database "ProjetAnalyse", table "dbo.ListeProduit", column 'numero_produits'.
+22-03-2018 12:51 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
+22-03-2018 12:52 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
+22-03-2018 12:53 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
