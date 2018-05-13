@@ -46,7 +46,8 @@ public class AlcoolDAO extends gestionnaireDAO<Alcool> {
 	public boolean Ajouter(Alcool obj) throws ExceptionAccesBD {
 
 		try {
-			PreparedStatement sqlCmd = SqlConn.prepareCall("select max(numProd) + 1 from Alcool");
+			SqlConn.setAutoCommit(false);
+			PreparedStatement sqlCmd = SqlConn.prepareCall("select max(numero_produit) + 1 from Produit");
 			ResultSet sqlRes = sqlCmd.executeQuery();
 			sqlRes.next();
 
@@ -56,24 +57,27 @@ public class AlcoolDAO extends gestionnaireDAO<Alcool> {
 
 			sqlCmd.close();
 
-			sqlCmd = SqlConn.prepareCall("insert into Produit " + "values(?,?,?,?)");
-
-			sqlCmd.setString(2, obj.getImageProduit());
-			sqlCmd.setInt(3, obj.getQuantiteStock());
-			sqlCmd.setFloat(4, obj.getPrix_unite());
-
-			sqlCmd = SqlConn.prepareCall("insert into Alcool" + "values(?,?,?,?)");
+			sqlCmd = SqlConn.prepareCall("insert into Produit values(?,?,?,?,?)");
+			
+			sqlCmd.setInt(1, numAlcool);
+			sqlCmd.setInt(2, obj.getQuantiteStock());
+			sqlCmd.setString(3,obj.getNomProduit());
+			sqlCmd.setString(4, obj.getImageProduit());
+			sqlCmd.setFloat(5, obj.getPrix_unite());
+			
+			sqlCmd.executeUpdate();
+			
+			sqlCmd = SqlConn.prepareCall("insert into Alcool values(?,?,?,?)");
 
 			sqlCmd.setInt(1, numAlcool);
 			sqlCmd.setString(2, obj.getNomAlcool());
 			sqlCmd.setString(3, obj.getGoutAlcool());
 			sqlCmd.setString(4, obj.getProvenance());
-
-			sqlCmd.close();
-
-			sqlCmd.setInt(1, obj.getNumProduit());
-
-			return (sqlCmd.executeUpdate() == 0) ? false : true;
+			
+			int iRes = sqlCmd.executeUpdate();
+			SqlConn.commit();
+			SqlConn.setAutoCommit(true);
+			return (iRes == 0) ? false : true;
 
 		} catch (SQLException e) {
 			throw new ExceptionAccesBD(e.getMessage());
@@ -120,7 +124,7 @@ public class AlcoolDAO extends gestionnaireDAO<Alcool> {
 		
 		try {
 			
-			PreparedStatement sqlCmd = SqlConn.prepareCall(" select p.numero_produit,a.nomAlcool,a.goutAlcool,a.provenance,p.image_produit,p.nom_produit,p.quantiteEnStock,p.prix_unite from Alcool as a, Produit as p where nom_produit = 'Alcool' order by a.nomAlcool asc" );
+			PreparedStatement sqlCmd = SqlConn.prepareCall("select p.numero_produit,a.nomAlcool,a.goutAlcool,a.provenance,p.image_produit,p.quantiteEnStock,p.nom_produit,p.prix_unite from Alcool as a, Produit as p where p.numero_produit = a.numProd order by p.nom_produit asc" );
 			
 			ResultSet sqlRes = sqlCmd.executeQuery();
 			

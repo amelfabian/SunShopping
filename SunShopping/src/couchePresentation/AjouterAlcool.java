@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 
 public class AjouterAlcool {
 	private final int Largeur = 580;
-	private final int Hauteur = 260;
+	private final int Hauteur = 350;
 
 	private Stage Fenetre = new Stage();
 	private Scene SceneObj;
@@ -39,6 +39,8 @@ public class AjouterAlcool {
 	private TextField TFGoutAlcool = new TextField();
 	private TextField TFProvenance = new TextField();
 	private TextField TFNomImage = new TextField();
+	private TextField TFQuantiteStock =  new TextField();
+	private TextField TFPrixUnite =  new TextField();
 	private Button BChargerImage = new Button("...");
 	private Button BAjouter = new Button("Ajouter");
 	private Button BFermer = new Button("Fermer");
@@ -57,6 +59,10 @@ public class AjouterAlcool {
 		GPSaisies.add(TFProvenance, 1, 3);
 		GPSaisies.add(new Label("Photo du produit: "), 0, 5);
 		GPSaisies.add(HBImg, 1, 5);
+		GPSaisies.add(new Label("Quantite en stock: "), 0, 6);
+		GPSaisies.add(TFQuantiteStock, 1, 6);
+		GPSaisies.add(new Label("Prix unitaire: "), 0, 7);
+		GPSaisies.add(TFPrixUnite, 1, 7);
 
 		// Espacement entre les cellules de GPSaisies
 
@@ -142,6 +148,8 @@ public class AjouterAlcool {
 			alcool.setGoutAlcool(TFGoutAlcool.getText());
 			alcool.setProvenance(TFProvenance.getText());
 			alcool.setImageProduit(TFNomImage.getText());
+			alcool.setQuantiteStock(Integer.parseInt(TFQuantiteStock.getText()));
+			alcool.setPrix_unite(Float.parseFloat(TFPrixUnite.getText()));
 
 			if (FabriqueDAO.getInstance().getInstAlcool().Ajouter(alcool) == false)
 				new MessageBox(AlertType.INFORMATION, "L'ajout n'a pas eu lieu!");

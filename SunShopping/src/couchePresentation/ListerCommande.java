@@ -16,7 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ListerCommande {
-	private final int Largeur  = 475;
+	private final int Largeur  = 625;
 	private final int Hauteur = 300;
 	
 	private Stage Fenetre = new Stage();
@@ -50,7 +50,7 @@ public class ListerCommande {
 		
 		//parametrer la table TVCommande
 		
-		TVCommande.setPrefSize(50+95+95+35, Hauteur-60);
+		TVCommande.setPrefSize(50+95+95+95+95+95+25, Hauteur-60);
 		TVCommande.setEditable(false);
 		
 		//indiiquer le nom de chaque propriété d'une commande

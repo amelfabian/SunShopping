@@ -49,3 +49,24 @@
 22-03-2018 12:51 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
 22-03-2018 12:52 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
 22-03-2018 12:53 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
+09-05-2018 18:17 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- The INSERT statement conflicted with the FOREIGN KEY constraint "FK__ChemiseHa__numPr__267ABA7A". The conflict occurred in database "ProjetAnalyse", table "dbo.Produit", column 'numero_produit'.
+09-05-2018 18:19 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- The INSERT statement conflicted with the FOREIGN KEY constraint "FK__ChemiseHa__numPr__267ABA7A". The conflict occurred in database "ProjetAnalyse", table "dbo.Produit", column 'numero_produit'.
+09-05-2018 18:22 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- The INSERT statement conflicted with the FOREIGN KEY constraint "FK__ChemiseHa__numPr__267ABA7A". The conflict occurred in database "ProjetAnalyse", table "dbo.Produit", column 'numero_produit'.
+09-05-2018 18:33 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- The INSERT statement conflicted with the FOREIGN KEY constraint "FK__ChemiseHa__numPr__267ABA7A". The conflict occurred in database "ProjetAnalyse", table "dbo.Produit", column 'numero_produit'.
+09-05-2018 18:38 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
+09-05-2018 18:44 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- L'instruction est fermée.
+09-05-2018 18:45 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+09-05-2018 18:47 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- L'instruction est fermée.
+09-05-2018 18:51 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- C:\Users\amelf\.git\SunShopping\images\produit\liqueur-de-rose.jpg
+09-05-2018 19:13 -- classe AjouterAlcool -- méthode  -- BAjouterAlcool() -- C:\Users\amelf\.git\SunShopping\images\produit\limoncello.jpg
+09-05-2018 19:20 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+09-05-2018 19:26 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 8 est hors limites.
+09-05-2018 19:30 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+09-05-2018 19:32 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+09-05-2018 19:34 -- classe ListerAlcool -- méthode  -- ListerAlcool() -- L'index 5 est hors limites.
+09-05-2018 19:37 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- Conversion failed when converting the nvarchar value 'chemise-verte-hawaienne.jpg' to data type int.
+09-05-2018 19:40 -- classe AjouterChemise -- méthode  -- BAjouterChemise() -- Conversion failed when converting the nvarchar value 'chemise-verte-hawaienne.jpg' to data type int.
+13-05-2018 11:38 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+13-05-2018 11:45 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- La conversion de int en DATE n'est pas prise en charge.
+13-05-2018 11:55 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- Une erreur s'est produite lors de la conversion de la valeur varchar vers le type de données JDBC INTEGER.
+13-05-2018 11:55 -- classe ListerCommandeClient -- méthode  -- CBChangertClient() -- Une erreur s'est produite lors de la conversion de la valeur varchar vers le type de données JDBC INTEGER.

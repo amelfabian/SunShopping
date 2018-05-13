@@ -108,17 +108,17 @@ public class CommandeDAO extends gestionnaireDAO<Commande> {
 			try {
 				PreparedStatement sqlCmd = 
 						SqlConn.prepareCall("select c.numero_commande, c.date_commande, c.heure_client,"
-								+ "c.montant_total, c.indication_livraison from Commande as c, Client as cl where c.client_fk = cl.numero_client AND c.numero_commande = ? order by numero_commande");
+								+ "c.client_fk, c.montant_total, c.indication_livraison from Commande as c, Client as cl where c.client_fk = cl.numero_client AND c.client_fk = ? order by numero_commande");
 				sqlCmd.setInt(1, numCom);
 				ResultSet sqlRes = sqlCmd.executeQuery();
 				
 				while (sqlRes.next() == true)
 					liste.add(new Commande(numCom,
-											sqlRes.getDate(1),
-											sqlRes.getTime(2),
-											sqlRes.getInt(3),
+											sqlRes.getDate(2),
+											sqlRes.getTime(3),
 											sqlRes.getInt(4),
-											sqlRes.getString(5)));
+											sqlRes.getInt(5),
+											sqlRes.getString(6)));
 				sqlRes.close();
 				
 			}

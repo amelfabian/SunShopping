@@ -48,7 +48,8 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 	@Override
 	public boolean Ajouter(ChemiseHawaienne obj) throws ExceptionAccesBD {
 		try {
-			PreparedStatement sqlCmd = SqlConn.prepareCall("select max(numProd) + 1 from ChemiseHawaienne");
+			SqlConn.setAutoCommit(false);
+			PreparedStatement sqlCmd = SqlConn.prepareCall("select max(numero_produit) + 1 from Produit");
 			ResultSet sqlRes = sqlCmd.executeQuery();
 			sqlRes.next();
 
@@ -58,14 +59,15 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 
 			sqlCmd.close();
 
-			sqlCmd = SqlConn.prepareCall("insert into Produit " + "values(?,?,?,?,?)");
+			sqlCmd = SqlConn.prepareCall("insert into Produit values(?,?,?,?,?)");
 			sqlCmd.setInt(1, numChemise);
-			sqlCmd.setString(2, obj.getImageProduit());
-			sqlCmd.setInt(3, obj.getQuantiteStock());
-			sqlCmd.setFloat(4, obj.getPrix_unite());
-			sqlCmd.setString(5, obj.getNomProduit());
-
-			sqlCmd = SqlConn.prepareCall("insert into ChemiseHawaienne" + " values(?,?,?,?,?)");
+			sqlCmd.setInt(2, obj.getQuantiteStock());
+			sqlCmd.setString(3, obj.getNomProduit());
+			sqlCmd.setString(4, obj.getImageProduit());
+			sqlCmd.setFloat(5, obj.getPrix_unite());
+			sqlCmd.executeUpdate();
+			
+			sqlCmd = SqlConn.prepareCall("insert into ChemiseHawaienne values(?,?,?,?,?)");
 
 			sqlCmd.setInt(1, numChemise);
 			sqlCmd.setString(2, obj.getNomChemise());
@@ -73,10 +75,11 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 			sqlCmd.setString(4, obj.getCouleurChemise());
 			Character c = obj.getTailleChemise();
 			sqlCmd.setString(5, c.toString());
+			int iRes = sqlCmd.executeUpdate();
+			SqlConn.setAutoCommit(true);
 
-
-
-			return (sqlCmd.executeUpdate() == 0) ? false : true;
+			
+			return (iRes == 0) ? false : true;
 
 		} catch (SQLException e) {
 			throw new ExceptionAccesBD(e.getMessage());
@@ -123,7 +126,7 @@ public class ChemiseHawaienneDAO extends gestionnaireDAO<ChemiseHawaienne> {
 		
 		try {
 			
-			PreparedStatement sqlCmd = SqlConn.prepareCall("select p.numero_produit, c.nomChemise,c.matiereChemise,c.couleurChemise,c.tailleChemise,p.image_produit,p.nom_produit,p.quantiteEnStock,p.prix_unite from ChemiseHawaienne as c , Produit as p where nom_produit != 'Alcool' order by nomChemise asc" );
+			PreparedStatement sqlCmd = SqlConn.prepareCall("select p.numero_produit, c.nomChemise,c.matiereChemise,c.couleurChemise,c.tailleChemise,p.image_produit,p.nom_produit,p.quantiteEnStock,p.prix_unite from ChemiseHawaienne as c , Produit as p where c.numProd = p.numero_produit order by nomChemise asc" );
 			
 			ResultSet sqlRes = sqlCmd.executeQuery();
 			

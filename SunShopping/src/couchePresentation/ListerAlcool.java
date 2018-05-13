@@ -9,6 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -19,7 +20,7 @@ import javafx.stage.Stage;
 public class ListerAlcool {
 
 		private final int Largeur = 645;
-		private final int Hauteur = 300;
+		private final int Hauteur = 400;
 		
 		private Stage Fenetre = new Stage();
 		private Scene SceneObj;
@@ -74,6 +75,7 @@ public class ListerAlcool {
 			});
 			
 			TVAlcool.getSelectionModel().selectFirst();
+			
 			
 			BFermer.setPrefSize(80, 20);
 			BFermer.setOnAction( e -> { Fenetre.close();});

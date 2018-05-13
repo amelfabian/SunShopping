@@ -16,7 +16,6 @@ public class FenetrePrincipale extends Application{
 	
 	private final int Largeur = 750;
 	private final int Hauteur = 500;
-	
 	private static Stage Instance;
 	
 	private Scene SceneObj;

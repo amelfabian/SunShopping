@@ -28,7 +28,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ListerArticleCommande {
-	private final int Largeur = 315;
+	private final int Largeur = 450;
 	private final int Hauteur = 310;
 
 	private Stage Fenetre = new Stage();
